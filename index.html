@@ -374,20 +374,6 @@ function sendMessage() {
   }
 }
 
-// ── 调用自己的FC后端，Key完全隐藏在服务器 ──
-const FC_URL = 'https://nutrition-api-xfwnyqpxkc.cn-hangzhou.fcapp.run';
-
-async function callFC(type, conv) {
-  const res = await fetch(FC_URL + '/life-coach', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ type, conversation: conv })
-  });
-  const data = await res.json();
-  if (data.error) throw new Error(data.error);
-  return data.content;
-}
-
 async function generateReport() {
   document.getElementById('chat-page').style.display = 'none';
   document.getElementById('report-page').style.display = 'block';
