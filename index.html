@@ -41,7 +41,7 @@
   .dot-paid { background: var(--gold); }
 
   .start-btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 40px; background: var(--ink); color: var(--paper); font-family: var(--font-sans); font-size: 14px; letter-spacing: .1em; border: none; cursor: pointer; transition: all .3s ease; opacity: 0; animation: fadeUp .8s ease forwards .95s; position: relative; overflow: hidden; }
-  .start-btn::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateX(-100%); transition: transform .4s ease; }
+  .start-btn::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateX(-100%); transition: transform .4s ease; pointer-events: none; }
   .start-btn:hover::before { transform: translateX(0); }
   .start-btn span, .start-btn svg { position: relative; z-index: 1; }
   .start-btn:hover svg { transform: translateX(4px); }
@@ -187,7 +187,7 @@
     <div class="value-item"><span class="dot dot-free"></span> 免费 · 人生梳理报告</div>
     <div class="value-item"><span class="dot dot-paid"></span> 付费解锁 · 行动指南</div>
   </div>
-  <button class="start-btn" onclick="startChat()">
+  <button type="button" class="start-btn" id="start-btn">
     <span>开始梳理我的人生</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </button>
@@ -321,6 +321,11 @@ const QUESTIONS = [
 
 let currentQ = 0, conversation = [], isWaiting = false;
 let reportData = null;
+
+document.addEventListener('DOMContentLoaded', function () {
+  var sb = document.getElementById('start-btn');
+  if (sb) sb.addEventListener('click', function () { startChat(); });
+});
 
 function startChat() {
   document.getElementById('landing').style.display = 'none';
