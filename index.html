@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>找到自己 · 人生梳理</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>:root { --font-serif: "Songti SC", "SimSun", serif; --font-sans: "PingFang SC", "Microsoft YaHei", sans-serif; }</style>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -14,7 +14,7 @@
     --green: #3a6b4a; --green-2: #e8f4ec;
     --red: #c04a3a; --red-2: #fdf0ee;
   }
-  html, body { height: 100%; background: var(--paper); color: var(--ink); font-family: 'Noto Sans SC', sans-serif; font-weight: 300; line-height: 1.7; }
+  html, body { height: 100%; background: var(--paper); color: var(--ink); font-family: var(--font-sans); font-weight: 300; line-height: 1.7; }
   body::before {
     content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 1000; opacity: .5;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
@@ -27,8 +27,8 @@
   .deco-c:nth-child(1) { width: 600px; height: 600px; top: -200px; left: -200px; }
   .deco-c:nth-child(2) { width: 400px; height: 400px; bottom: -100px; right: -100px; border-color: var(--paper-2); }
   .deco-c:nth-child(3) { width: 200px; height: 200px; top: 40%; right: 10%; border-color: var(--gold); opacity: .25; }
-  .brand-mark { font-family: 'Noto Serif SC', serif; font-size: 11px; letter-spacing: .4em; color: var(--gold); margin-bottom: 32px; opacity: 0; animation: fadeUp .8s ease forwards .2s; }
-  .landing-title { font-family: 'Noto Serif SC', serif; font-size: clamp(44px, 10vw, 84px); font-weight: 300; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 8px; opacity: 0; animation: fadeUp .8s ease forwards .4s; }
+  .brand-mark { font-family: var(--font-serif); font-size: 11px; letter-spacing: .4em; color: var(--gold); margin-bottom: 32px; opacity: 0; animation: fadeUp .8s ease forwards .2s; }
+  .landing-title { font-family: var(--font-serif); font-size: clamp(44px, 10vw, 84px); font-weight: 300; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 8px; opacity: 0; animation: fadeUp .8s ease forwards .4s; }
   .landing-title em { font-style: normal; color: var(--gold); }
   .landing-sub { font-size: 15px; color: var(--ink-3); margin-bottom: 48px; letter-spacing: .04em; opacity: 0; animation: fadeUp .8s ease forwards .6s; }
   .landing-desc { max-width: 420px; font-size: 14px; color: var(--ink-3); line-height: 1.95; margin-bottom: 20px; opacity: 0; animation: fadeUp .8s ease forwards .7s; }
@@ -40,7 +40,7 @@
   .dot-free { background: var(--green); }
   .dot-paid { background: var(--gold); }
 
-  .start-btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 40px; background: var(--ink); color: var(--paper); font-family: 'Noto Sans SC', sans-serif; font-size: 14px; letter-spacing: .1em; border: none; cursor: pointer; transition: all .3s ease; opacity: 0; animation: fadeUp .8s ease forwards .95s; position: relative; overflow: hidden; }
+  .start-btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 40px; background: var(--ink); color: var(--paper); font-family: var(--font-sans); font-size: 14px; letter-spacing: .1em; border: none; cursor: pointer; transition: all .3s ease; opacity: 0; animation: fadeUp .8s ease forwards .95s; position: relative; overflow: hidden; }
   .start-btn::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateX(-100%); transition: transform .4s ease; }
   .start-btn:hover::before { transform: translateX(0); }
   .start-btn span, .start-btn svg { position: relative; z-index: 1; }
@@ -51,7 +51,7 @@
   /* ── CHAT ── */
   #chat-page { display: none; min-height: 100vh; flex-direction: column; }
   .chat-header { padding: 18px 32px; border-bottom: 1px solid var(--paper-3); display: flex; align-items: center; justify-content: space-between; background: var(--paper); position: sticky; top: 0; z-index: 100; }
-  .chat-brand { font-family: 'Noto Serif SC', serif; font-size: 16px; font-weight: 300; color: var(--ink); letter-spacing: .04em; }
+  .chat-brand { font-family: var(--font-serif); font-size: 16px; font-weight: 300; color: var(--ink); letter-spacing: .04em; }
   .chat-brand em { color: var(--gold); font-style: normal; }
   .progress-wrap { display: flex; align-items: center; gap: 10px; }
   .progress-label { font-size: 11px; color: var(--ink-4); letter-spacing: .04em; }
@@ -71,7 +71,7 @@
   .typing span:nth-child(3) { animation-delay: .4s; }
   .chat-input-wrap { position: fixed; bottom: 0; left: 0; right: 0; background: var(--paper); border-top: 1px solid var(--paper-3); padding: 18px 24px 26px; }
   .chat-input-inner { max-width: 680px; margin: 0 auto; display: flex; gap: 10px; align-items: flex-end; }
-  .chat-textarea { flex: 1; border: 1px solid var(--paper-3); background: var(--paper-2); border-radius: 12px; padding: 12px 16px; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 300; color: var(--ink); resize: none; min-height: 48px; max-height: 140px; outline: none; transition: border-color .2s; line-height: 1.6; }
+  .chat-textarea { flex: 1; border: 1px solid var(--paper-3); background: var(--paper-2); border-radius: 12px; padding: 12px 16px; font-family: var(--font-sans); font-size: 14px; font-weight: 300; color: var(--ink); resize: none; min-height: 48px; max-height: 140px; outline: none; transition: border-color .2s; line-height: 1.6; }
   .chat-textarea:focus { border-color: var(--gold); }
   .chat-textarea::placeholder { color: var(--ink-4); }
   .send-btn { width: 48px; height: 48px; border-radius: 12px; background: var(--ink); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .2s; }
@@ -83,21 +83,21 @@
   #report-page { display: none; min-height: 100vh; background: var(--paper); }
   .report-header { padding: 60px 40px 40px; max-width: 760px; margin: 0 auto; border-bottom: 1px solid var(--paper-3); }
   .report-eyebrow { font-size: 11px; letter-spacing: .28em; color: var(--gold); margin-bottom: 14px; font-weight: 400; }
-  .report-title { font-family: 'Noto Serif SC', serif; font-size: clamp(26px, 5vw, 44px); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 10px; }
+  .report-title { font-family: var(--font-serif); font-size: clamp(26px, 5vw, 44px); font-weight: 300; line-height: 1.2; color: var(--ink); margin-bottom: 10px; }
   .report-date { font-size: 12px; color: var(--ink-4); letter-spacing: .04em; }
   .report-body { max-width: 760px; margin: 0 auto; padding: 48px 40px 20px; }
   .report-section { margin-bottom: 44px; opacity: 0; animation: fadeUp .6s ease forwards; }
   .section-num { font-size: 11px; color: var(--gold); letter-spacing: .2em; margin-bottom: 6px; font-weight: 400; }
-  .section-heading { font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--paper-3); }
+  .section-heading { font-family: var(--font-serif); font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--paper-3); }
   .section-content { font-size: 14px; color: var(--ink-2); line-height: 2; }
-  .highlight-box { background: var(--paper-2); border-left: 3px solid var(--gold); padding: 14px 18px; margin: 16px 0; font-size: 14px; color: var(--ink-2); line-height: 1.85; font-family: 'Noto Serif SC', serif; font-weight: 300; }
+  .highlight-box { background: var(--paper-2); border-left: 3px solid var(--gold); padding: 14px 18px; margin: 16px 0; font-size: 14px; color: var(--ink-2); line-height: 1.85; font-family: var(--font-serif); font-weight: 300; }
 
   /* ── PAYWALL ── */
   .paywall { max-width: 760px; margin: 0 auto 0; padding: 0 40px 60px; }
   .paywall-card { border: 1px solid var(--paper-3); border-radius: 16px; overflow: hidden; opacity: 0; animation: fadeUp .6s ease forwards .6s; }
   .paywall-top { background: var(--ink); padding: 32px; text-align: center; }
   .paywall-lock { font-size: 28px; margin-bottom: 10px; }
-  .paywall-title { font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 300; color: var(--paper); margin-bottom: 8px; }
+  .paywall-title { font-family: var(--font-serif); font-size: 20px; font-weight: 300; color: var(--paper); margin-bottom: 8px; }
   .paywall-sub { font-size: 13px; color: var(--ink-4); line-height: 1.7; }
   .paywall-features { padding: 24px 28px; border-bottom: 1px solid var(--paper-3); display: flex; flex-direction: column; gap: 12px; }
   .paywall-feat { display: flex; gap: 10px; align-items: flex-start; }
@@ -106,10 +106,10 @@
   .feat-text b { font-weight: 500; color: var(--ink); display: block; margin-bottom: 1px; }
   .paywall-bottom { padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
   .price-display { }
-  .price-amount { font-family: 'Noto Serif SC', serif; font-size: 36px; font-weight: 300; color: var(--ink); }
+  .price-amount { font-family: var(--font-serif); font-size: 36px; font-weight: 300; color: var(--ink); }
   .price-amount sup { font-size: 16px; vertical-align: super; }
   .price-note { font-size: 11px; color: var(--ink-4); margin-top: 2px; }
-  .pay-btn { padding: 14px 32px; background: var(--gold); color: var(--ink); font-family: 'Noto Sans SC', sans-serif; font-size: 14px; font-weight: 500; border: none; cursor: pointer; letter-spacing: .06em; transition: all .2s; border-radius: 2px; }
+  .pay-btn { padding: 14px 32px; background: var(--gold); color: var(--ink); font-family: var(--font-sans); font-size: 14px; font-weight: 500; border: none; cursor: pointer; letter-spacing: .06em; transition: all .2s; border-radius: 2px; }
   .pay-btn:hover { background: var(--gold-2); }
   .paywall-guarantee { padding: 14px 28px; background: var(--paper-2); text-align: center; font-size: 12px; color: var(--ink-4); }
 
@@ -117,7 +117,7 @@
   #guide-section { display: none; max-width: 760px; margin: 0 auto; padding: 0 40px 80px; }
   .guide-header { padding: 32px 0 20px; border-top: 1px solid var(--paper-3); margin-bottom: 8px; }
   .guide-eyebrow { font-size: 11px; letter-spacing: .28em; color: var(--green); margin-bottom: 10px; }
-  .guide-title { font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 300; color: var(--ink); }
+  .guide-title { font-family: var(--font-serif); font-size: 24px; font-weight: 300; color: var(--ink); }
   .cheer-box { background: var(--green-2); border-left: 3px solid var(--green); padding: 16px 20px; margin: 20px 0 28px; border-radius: 0 8px 8px 0; font-size: 14px; color: #2a5438; line-height: 1.85; font-style: italic; }
   .guide-section { margin-bottom: 36px; opacity: 0; animation: fadeUp .6s ease forwards; }
   .guide-section-title { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
@@ -130,21 +130,21 @@
   .tag-month { background: #faeeda; color: #633806; }
   .tag-long { background: #eeedfe; color: #3c3489; }
   .final-cheer { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 28px 24px; margin-top: 32px; text-align: center; }
-  .final-cheer p { font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 300; line-height: 1.7; margin-bottom: 10px; }
+  .final-cheer p { font-family: var(--font-serif); font-size: 18px; font-weight: 300; line-height: 1.7; margin-bottom: 10px; }
   .final-cheer span { font-size: 13px; color: var(--ink-4); }
 
   /* ── MODAL (payment) ── */
   .modal-overlay { position: fixed; inset: 0; background: rgba(26,24,20,.6); z-index: 500; display: none; align-items: center; justify-content: center; padding: 24px; }
   .modal-overlay.open { display: flex; }
   .modal { background: var(--paper); border-radius: 16px; max-width: 380px; width: 100%; padding: 32px 28px; text-align: center; }
-  .modal-title { font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 300; color: var(--ink); margin-bottom: 8px; }
+  .modal-title { font-family: var(--font-serif); font-size: 20px; font-weight: 300; color: var(--ink); margin-bottom: 8px; }
   .modal-sub { font-size: 13px; color: var(--ink-3); margin-bottom: 24px; line-height: 1.7; }
   .qr-placeholder { width: 160px; height: 160px; border-radius: 8px; background: var(--paper-2); border: 1px dashed var(--paper-3); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; }
   .qr-placeholder svg { opacity: .3; }
   .qr-placeholder span { font-size: 11px; color: var(--ink-4); }
-  .modal-price { font-family: 'Noto Serif SC', serif; font-size: 28px; color: var(--gold); margin-bottom: 6px; }
+  .modal-price { font-family: var(--font-serif); font-size: 28px; color: var(--gold); margin-bottom: 6px; }
   .modal-note { font-size: 12px; color: var(--ink-4); margin-bottom: 20px; }
-  .modal-confirm { width: 100%; padding: 13px; background: var(--ink); color: var(--paper); border: none; font-family: 'Noto Sans SC', sans-serif; font-size: 14px; cursor: pointer; border-radius: 4px; letter-spacing: .06em; transition: background .2s; margin-bottom: 8px; }
+  .modal-confirm { width: 100%; padding: 13px; background: var(--ink); color: var(--paper); border: none; font-family: var(--font-sans); font-size: 14px; cursor: pointer; border-radius: 4px; letter-spacing: .06em; transition: background .2s; margin-bottom: 8px; }
   .modal-confirm:hover { background: var(--gold); color: var(--ink); }
   .modal-cancel { font-size: 12px; color: var(--ink-4); cursor: pointer; background: none; border: none; letter-spacing: .04em; }
   .modal-cancel:hover { color: var(--ink); }
@@ -155,8 +155,8 @@
   .generating p { font-size: 14px; color: var(--ink-3); letter-spacing: .04em; }
 
   .report-footer { max-width: 760px; margin: 0 auto; padding: 28px 40px 56px; border-top: 1px solid var(--paper-3); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .footer-brand { font-family: 'Noto Serif SC', serif; font-size: 13px; color: var(--ink-4); }
-  .restart-btn { padding: 9px 22px; border: 1px solid var(--ink-3); background: transparent; font-family: 'Noto Sans SC', sans-serif; font-size: 13px; font-weight: 300; color: var(--ink-2); cursor: pointer; letter-spacing: .04em; transition: all .2s; }
+  .footer-brand { font-family: var(--font-serif); font-size: 13px; color: var(--ink-4); }
+  .restart-btn { padding: 9px 22px; border: 1px solid var(--ink-3); background: transparent; font-family: var(--font-sans); font-size: 13px; font-weight: 300; color: var(--ink-2); cursor: pointer; letter-spacing: .04em; transition: all .2s; }
   .restart-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
@@ -294,7 +294,7 @@
 <script>
 // ── CONFIG ──
 // ── FC后端地址，Key完全在服务器，用户看不到 ──
-const FC_URL = 'http://nutrition-api-xfwnyqpxkc.cn-hangzhou.fcapp.run';
+const FC_URL = 'https://nutrition-api-xfwnyqpxkc.cn-hangzhou.fcapp.run';
 
 async function callFC(type, conv) {
   const res = await fetch(FC_URL + '/life-coach', {
@@ -375,7 +375,7 @@ function sendMessage() {
 }
 
 // ── 调用自己的FC后端，Key完全隐藏在服务器 ──
-const FC_URL = 'http://nutrition-api-xfwnyqpxkc.cn-hangzhou.fcapp.run';
+const FC_URL = 'https://nutrition-api-xfwnyqpxkc.cn-hangzhou.fcapp.run';
 
 async function callFC(type, conv) {
   const res = await fetch(FC_URL + '/life-coach', {
